@@ -16,8 +16,14 @@ namespace Advanced_Lesson_3_Static_Interface
         /// </summary>
         public static void AL3_P1_3()
         {
+            UniqueItem idCounter= new UniqueItem();
+            idCounter.SetId(0);
+            for (int i = 0; i < 50; i++)
+            {
+                idCounter = new UniqueItem();
+            }
+            Console.WriteLine(idCounter.Counter); 
         }
-
         /// <summary>
         /// AL3-P2/3. Отредактировать консольное приложение Printer. 
         /// Заменить базовый абстрактный класс на интерфейс.
@@ -37,5 +43,30 @@ namespace Advanced_Lesson_3_Static_Interface
         {
         }
 
-    }    
+    }
+    public class UniqueItem
+    {
+        private static int _counter;
+        public int Counter
+        {
+            get
+            {
+                return _counter;
+            }
+        }
+
+        public UniqueItem()
+        {
+            _counter++;
+        }
+
+        static UniqueItem()
+        {
+            _counter = 0;
+        }
+
+        public void SetId(int number) => _counter = number;
+
+    }
+
 }
