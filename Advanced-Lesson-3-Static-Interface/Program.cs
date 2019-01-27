@@ -10,11 +10,12 @@ namespace Advanced_Lesson_3_Static_Interface
         {
             static void Main(string[] args)
             {
-                //Practice.AL3_P1_3();
+            //Practice.AL3_P1_3();
+            Practice.AL3_P3_3();
 
                 // Lesson.RentPointsExample();
 
-                Console.ReadLine();
+            Console.ReadKey();
             }
         }
 
